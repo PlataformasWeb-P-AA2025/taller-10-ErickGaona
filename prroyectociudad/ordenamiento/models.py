@@ -1,21 +1,6 @@
 from django.db import models
 
-# #Dadas dos entidades:
-
-# Parroquia:
-
-#     nombre
-#     ubicación (norte, sur, este, oeste)
-#     tipo [urbana, rural]
-
-# Barrio o Ciudadela:
-
-#     nombre
-#     número de viviendas
-#     número de parques [1, 2, 3, 4, 5, 6]
-#     número de edificios residenciales
-#     parroquia
-
+# Create your models here.
 class Parroquia(models.Model):
     nombre = models.CharField(max_length=100)
     ubicacion = models.CharField(max_length=50)  # norte, sur, este, oeste
