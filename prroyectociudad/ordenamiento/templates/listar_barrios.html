@@ -1,0 +1,6 @@
+<h1>Lista de Barrios</h1>
+<ul>
+    {% for barrio in barrios %}
+        <li>{{ barrio.nombre }} ({{ barrio.parroquia.nombre }})</li>
+    {% endfor %}
+</ul>

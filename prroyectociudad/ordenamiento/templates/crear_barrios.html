@@ -1,0 +1,8 @@
+<h2>Agregar Barrios</h2>
+<form action="" method="post">
+  {% csrf_token %}
+  
+  {{ formulario.as_p }}
+  
+  <p><input type='submit' value='Agregar'/></p>
+</form>

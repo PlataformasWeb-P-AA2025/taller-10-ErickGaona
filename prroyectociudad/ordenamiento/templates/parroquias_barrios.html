@@ -1,0 +1,11 @@
+<h1>Parroquias y sus Barrios</h1>
+{% for parroquia in parroquias %}
+    <h2>{{ parroquia.nombre }}</h2>
+    <ul>
+        {% for barrio in parroquia.barrios.all %}
+            <li>{{ barrio.nombre }}</li>
+        {% empty %}
+            <li>No hay barrios</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
