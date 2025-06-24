@@ -19,19 +19,9 @@ class BarrioCiudadelaInline(admin.TabularInline):
 
 # Definimos la clase de administración para el modelo Parroquia
 class ParroquiaAdmin(admin.ModelAdmin):
-    """
-    Personaliza la vista de administración para las Parroquias.
-    """
-    # Incluimos el inline de barrios para una gestión integrada
     inlines = [BarrioCiudadelaInline]
-    
-    # Campos que se mostrarán en la lista de parroquias
     list_display = ('nombre', 'tipo', 'ubicacion', 'get_total_barrios')
-    
-    # Filtros que aparecerán en la barra lateral
     list_filter = ('tipo',)
-    
-    # Habilitar un campo de búsqueda
     search_fields = ('nombre',)
 
     # Método para contar cuántos barrios tiene cada parroquia
@@ -42,16 +32,9 @@ class ParroquiaAdmin(admin.ModelAdmin):
 
 # Definimos la clase de administración para el modelo BarrioCiudadela
 class BarrioCiudadelaAdmin(admin.ModelAdmin):
-    """
-    Personaliza la vista de administración para los Barrios/Ciudadelas.
-    """
     # Campos que se mostrarán en la lista de barrios
     list_display = ('nombre', 'parroquia', 'numero_viviendas', 'numero_parques', 'numero_edificios_residenciales')
-
-    # Filtros
     list_filter = ('parroquia',)
-
-    # Búsqueda
     search_fields = ('nombre', 'parroquia__nombre')
 
 # Registramos los modelos con sus clases de administración personalizadas.
